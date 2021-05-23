@@ -1,0 +1,24 @@
+{
+  "name": "DockerNodeExpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "noode index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinseok9338/DockerNodeExpress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jinseok9338/DockerNodeExpress/issues"
+  },
+  "homepage": "https://github.com/jinseok9338/DockerNodeExpress#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
