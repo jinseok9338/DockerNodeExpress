@@ -6,11 +6,18 @@ services:
             args:
                 NODE_ENV: development
         volumes: 
-            - ./:/app:ro 
+            - ./:/app 
             - /app/node_modules 
         environment: 
             - NODE_ENV=development
+            - MONGO_USER=jason
+            - MONGO_PASSWORD=mypassword
         command: npm run dev
+    mongo:
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=jason
+            - MONGO_INITDB_ROOT_PASSWORD=mypassword
+        
 
 
         

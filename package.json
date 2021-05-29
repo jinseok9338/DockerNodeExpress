@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-    ,"dev":"nodemon -L index.js"
+    "start": "node index.js",
+    "dev": "nodemon -L index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/jinseok9338/DockerNodeExpress#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
