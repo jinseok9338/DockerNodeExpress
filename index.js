@@ -5,11 +5,20 @@ const app = express();
 
 const mongoURL =`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
 
-mongoose
+const connectWithRetry=()=>{
+  mongoose
   .connect(mongoURL,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
   .then(() =>
-    console.log("Succesfully connectedd to DB")).catch((e) => console.log(e))
-  
+    console.log("Succesfully connectedd to DB")).catch((e) => {
+      console.log(e)
+    setTimeout(connectWithRetry,5000) //Make sure that the mongo DB is up and running!!
+    })
+
+}
+
+connectWithRetry()
+
+
 app.get("/", (_req, res) => {
   res.send("Hello World!!!!");
 });
