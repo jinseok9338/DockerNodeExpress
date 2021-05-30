@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jinseok9338/DockerNodeExpress#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "mongoose": "^5.12.12"
   },

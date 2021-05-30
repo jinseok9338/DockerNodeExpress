@@ -1,0 +1,42 @@
+//Note that URL changes every time booting up the new instances
+
+
+###
+GET https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/posts
+Content-Type: application/json
+
+###
+POST https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/posts
+Content-Type: application/json
+
+{
+    "title":"This is first Title",
+    "body":"This is first body"
+}
+//id:60b3418d4aff7c01d0da1c96
+
+###
+GET https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/posts/60b3418d4aff7c01d0da1c96
+Content-Type: application/json
+
+###
+PATCH https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/posts/60b3418d4aff7c01d0da1c96
+Content-Type: application/json
+
+{
+  "title":"This is Updated Title",
+    "body":"This is Updated body"
+}
+
+###
+DELETE https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/posts/60b3418d4aff7c01d0da1c96
+Content-Type: application/json
+
+###
+POST https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/users
+Content-Type: application/json
+
+{
+"username":"jason",
+"password":"password"
+}

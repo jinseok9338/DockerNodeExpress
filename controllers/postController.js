@@ -11,17 +11,15 @@ exports.getAllPosts = async (req, res, next) => {
       },
     });
   } catch (e) {
-    console.log(e)
+    console.log(e);
     res.status(400).json({
       status: "fail",
-      data: {
-        e,
-      },
+      data: e.body
     });
   }
 };
 
-exports.getOnePost = async (req, res, next)=>{
+exports.getOnePost = async (req, res, next) => {
   try {
     const post = await Post.findById(req.params.id);
     res.status(200).json({
@@ -32,19 +30,17 @@ exports.getOnePost = async (req, res, next)=>{
       },
     });
   } catch (e) {
-    console.log(e)
+    console.log(e);
     res.status(400).json({
       status: "fail",
-      data: {
-        e,
-      },
+      data:e.body
     });
   }
 };
 
-exports.createPost = async (req, res, next)=>{
+exports.createPost = async (req, res, next) => {
   try {
-    const post = await Post.create(req.body)
+    const post = await Post.create(req.body);
     res.status(200).json({
       status: "success",
       // results: post.length,
@@ -53,21 +49,19 @@ exports.createPost = async (req, res, next)=>{
       },
     });
   } catch (e) {
-    console.log(e)
+    console.log(e);
     res.status(400).json({
       status: "fail",
-      data: {
-        e,
-      },
+      data: e.body,
     });
   }
 };
 
-exports.updatePost = async (req, res, next)=>{
+exports.updatePost = async (req, res, next) => {
   try {
-    const post = await Post.findByIdAndUpdate(req.params.id,req.body,{
-      new:true,
-      runValidators:true
+    const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
     });
     res.status(200).json({
       status: "success",
@@ -77,32 +71,27 @@ exports.updatePost = async (req, res, next)=>{
       },
     });
   } catch (e) {
-    console.log(e)
+    console.log(e);
     res.status(400).json({
       status: "fail",
-      data: {
-        e,
-      },
+     data:e.body
     });
   }
 };
 
-
-exports.deletePost = async (req, res, next)=>{
+exports.deletePost = async (req, res, next) => {
   try {
     const post = await Post.findByIdAndDelete(req.params.id);
     res.status(200).json({
       status: "success",
       // results: post.length,
-      data: null
+      data: null,
     });
   } catch (e) {
-    console.log(e)
+    console.log(e);
     res.status(400).json({
       status: "fail",
-      data: {
-        e,
-      },
+      data:e.body
     });
   }
 };

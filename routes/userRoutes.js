@@ -6,7 +6,7 @@ const router = express.Router();
 //localhost:3000/
 router
   .route("/")
-  .post(authController.createPost);
+  .post(authController.signUp);
 
 // router
 //   .route("/:id")

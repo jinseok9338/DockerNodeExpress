@@ -1,4 +1,6 @@
 docker ps : see the running containers
 docker image ls: see which images are built 
 docker build -t node-app-image . : build the image of the current directory
-docker-compose
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
+docker logs dockernodeexpress_my-node-app_1 --follow
