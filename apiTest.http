@@ -2,7 +2,11 @@
 
 
 ###
-GET https://3000-aquamarine-goldfish-8w4woh55.ws-us08.gitpod.io/api/v1/posts
+GET https://3000-copper-bat-z99aqgs7.ws-us08.gitpod.io/api/v1
+Content-Type: application/json
+
+###
+GET https://3000-copper-bat-z99aqgs7.ws-us08.gitpod.io/api/v1/posts
 Content-Type: application/json
 
 ###

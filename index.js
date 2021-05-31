@@ -11,6 +11,7 @@ const {
   MONGO_PORT,
   REDIS_URL,
   REDIS_PORT,
+  SESSION_SECRET
 } = require("./config/config");
 
 
@@ -44,7 +45,10 @@ const connectWithRetry = () => {
 };
 
 connectWithRetry();
-app.use(session({
+
+app.enable("trust proxy")
+
+ app.use(session({
   store: new RedisStore({ client: redisClient }),
   secret: SESSION_SECRET,
   cookie: {
@@ -60,6 +64,7 @@ app.use(express.json());
 
 app.get("/", (_req, res) => {
   res.send("Hello World!!!!");
+  console.log("Yes it ran!! Congrats")
 });
 
 //localhost:3000/posts
@@ -71,5 +76,6 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+//sudo apt-get update
 //apt-get install -y npm
 //install npm first then install any other packages
